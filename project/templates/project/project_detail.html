@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+
+<script src="https://kit.fontawesome.com/332a215f17.js" cross origin="anonymous"></script>
+<link href="https://fonts.googleapis.com/css?family=Josefin+Sans:400,700&display=swap" rel="stylesheet">   
+<title>Construction</title>
+
+<link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+     <div class="container-fluid icons py-2 px-3">
+         <div class="row">
+             <div class="col d-flex justify-content-between align-items-baseline">
+                 <div class="icons">
+                     <a href="https://www.facebook.com/" class="mx-2">
+                         <i class="fab fa-facebook"></i>
+                     </a>
+                     <a href="#" class="mx-2">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="#" class="mx-2">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                 </div>
+                 <h6>Jalgalenirmansewa@gmail.com</h6>
+             </div>
+         </div>
+     </div>
+      <div id="header">
+          <nav id="navbar" class="navbar navbar-expand-md">
+        <a class="navbar-brand px-2 py-0" href="index.html"><img src="../Constrution/image/nepal.png" alt="logo" width="110"> </a>
+        
+           <button  class="navbar-toggler bg-light" type="button" 
+              data-toggle="collapse"  data-target="#navbar">
+           <div class="line1"></div>
+           <div class="line2"></div>
+           <div class="line3"></div>
+            </button>
+            <div class="collapse navbar-collapse justify-content-between" id="navbar">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item">
+                <a href="index.html" class="nav-link m-2 text-capitalize nav-active">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/about-us" class="nav-link m-2 text-capitalize">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="projects.html" class="nav-link m-2 text-capitalize">Projects</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="services" class="nav-link m-2 text-capitalize">Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="gallery.html" class="nav-link m-2 text-capitalize">Gallery</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="contact.html" class="nav-link m-2 text-capitalize">Contact</a>
+                    </li>
+                </ul>
+                 <form class="form-inline ml-3">
+                    <div class="input-group">
+                        <input type="text" class="form-control" 
+                        placeholder="search">
+                        <div class="input-group-append">
+                            <button class="btn search-btn" type="button">
+                                <i class="fas fa-search text-muted"></i>
+                            </button>
+                        </div>
+                    </div>
+                </form> 
+            </div>
+          </nav>
+
+
+
+  <!---Our PROJECTS----->
+   <section class="project py-3">
+    <div class="container">
+        <div class="project mb-4">
+            <!--Parts-->
+            <div class="row text-center">
+                <div class="col-lg-12 my-2">
+                  <div class="img-content"><!--imgBx-->
+                    <img src="{{project.img.url}}"alt="commerial"class="img-fluid project-img">                  
+                  </div>
+                  <div class="content">
+                    <h3 class="text-uppercase text-center text-dark px-3"> {{project.name}} </h3>
+                    <p class="text-dark">{{project.desc}}</p>
+                  </div>
+                </div>                           
+            </div>
+        </div>
+    </div>
+</section>
+<!--End of OUR projects Section-->
+
+<!---FoTER-->
+<footer class="bg-light text-dark pt-5 pv-4">
+  <div class="container text-center text-med-left">
+    <div class="row text-center text-md-left">
+      
+      <div class="col-md-3 col-lg-xl-3 mc-auto mt-3" >
+        <h5 class="text-uppercase mb-4 font-weight-bold text-info"> About Us</h5>
+        <hr class="mb-4">
+        <p> hello my webpfe</p>
+      </div>
+      <div class="col-md-2 col-lg-2 col-xl-2  mx-auto mt-3">
+        <h5 class="text-uppercase mb-4 font-weight-bold text-info">Know More</h5>
+        <hr class="mb-4">
+        <p>
+          <a href="projects.html" class="text-dark" style="text-decoration:none"> Our Projects</a>
+        </p>
+        <p>
+          <a href="gallery.html" class="text-dark" style="text-decoration:none"> Gallery</a>
+        </p>
+        <p>
+          <a href="jobs.html" class="text-dark" style="text-decoration:none"> Jobs</a>
+        </p>
+      </div>
+      <div class="col-md-2 col-lg-2 col-xl-2  mx-auto mt-3">
+        <h5 class="text-uppercase mb-4 font-weight-bold text-info"> Find U</h5>
+        <hr class="mb-4">
+       
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3531.806670713143!2d85.28704261425824!3d27.723254831401267!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39eb192bfd89ba61%3A0x403ebbdd468c1d5!2sPrabhu%20Iron%20Industries%20PVT.LTD!5e0!3m2!1sen!2snp!4v1631762772868!5m2!1sen!2snp"
+      width="150%" height="200" frameborder="0" style="border:0" allowfullscreen></iframe>
+    
+</div>
+      <div class="col-md-4 col-lg-3 col-xl-3  mx-auto mt-3">
+        <h5 class="text-uppercase mb-4 font-weight-bold text-info">let Us Help</h5>
+        <hr class="mb-4">
+        <p>
+          <li class="fas fa-home mr-3"></li> Swyambhu, Nepal</p>
+        <p>
+          <li class="fas fa-envelope mr-3"></li> info@jalgale.com
+        </p>
+        <p>
+          <li class="fas fa-phone mr-3"></li> +977-1 9023432
+        </p>
+        <p>
+          <li class="fas fa-print mr-3"></li> +977-1 9023432
+        </p>
+    </div>
+    <hr class="row d-flex justify-content-center">
+  </div>
+  </div>
+  
+</footer>
+</body>
+</html>
+ 

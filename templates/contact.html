@@ -1,0 +1,91 @@
+<!--Contact us section-->
+<section class="bg-color p-5">
+  <div class="container">
+    <div class="contact-us">
+      <div class="row">
+        <div class="col-md-12 text-center mb-3">
+          <h2>Contact Us</h2>
+          <span class="title-border"></span>
+          <p>For more information contact us</p>
+        </div>
+      </div>
+      <div class="row contact">
+        <div class="col-md-4 text-center">
+          <i class="fas fa-mobile-alt fa-3x color"></i>
+          <h5 class="mt-3">Phone</h5>
+          <p>{{siteSettings.phone}}</p>
+        </div>
+        <div class="col-md-4 text-center">
+          <i class="fas fa-map-marker-alt fa-3x color"></i>
+          <h5 class="mt-3">Address</h5>
+          <p>{{siteSettings.address}}</p>
+        </div>
+        <div class="col-md-4 text-center">
+          <i class="far fa-envelope-open fa-3x color"></i>
+          <h5 class="mt-3">Email</h5>
+          <p>{{siteSettings.email}}</p>
+        </div>
+      </div>
+      <div class="row justify-content-center">
+        <div class="col-lg-10 col-md-8">
+          <br />
+          <form action="{% url 'home:contact-us' %}" method="POST">
+            {% csrf_token %}
+
+            <div class="input-group input-group-lg mb-3">
+              <div class="input-group-prepend">
+                <span class="input-group-text">
+                  <i class="fas fa-user"></i>
+                </span>
+              </div>
+              <input
+                type="text"
+                name="name"
+                class="form-control"
+                placeholder="Name"
+                required
+              />
+            </div>
+
+            <div class="input-group input-group-lg mb-3">
+              <div class="input-group-prepend">
+                <span class="input-group-text">
+                  <i class="fas fa-envelope"></i>
+                </span>
+              </div>
+              <input
+                type="text"
+                name="email"
+                class="form-control"
+                placeholder="Email"
+                required
+              />
+            </div>
+
+            <div class="input-group input-group-lg mb-3">
+              <div class="input-group-prepend">
+                <span class="input-group-text">
+                  <i class="fas fa-pencil-alt"></i>
+                </span>
+              </div>
+              <textarea
+                name="message"
+                class="form-control"
+                placeholder="Message"
+                rows="5"
+                required
+              ></textarea>
+            </div>
+
+            <input
+              type="submit"
+              value="Submit"
+              class="btn btn-cont btn-block btn-lg"
+            />
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!--end of contact us section-->

@@ -1,0 +1,52 @@
+{% extends 'main.html' %}
+
+{% block content %}
+
+<!--- Our PROJECTS ----->
+<section class="project py-3">
+  <div class="container">
+    <div class="project mb-4">
+      <div class="row text-center m-4">
+        <div class="col-md-12 text-center">
+          <h2 class="mb-4">{{ page.title }}</h2>
+          <span class="title-border"></span>
+          <p>{{ page.sub_description }}</p>
+        </div>
+
+        <div class="service-inner-wrapper col-md-12">
+          <div class="container">
+            {{ page.description | safe }}
+          </div>
+        </div>
+
+        <div class="row text-center">
+        {% for project in projects %}
+        <p>{{project_desc.desc}}</p>
+        <!--Parts imaage overlay-->
+          <div class="col-lg-4 my-2">
+            <div class="projects-container">
+              <!--box-->
+              <a href="/project/{{project.id}}">
+                <div class="img-content">
+                  <!--imgBx-->
+                  <img src="{{project.img.url}}" alt="commerial" class="img-fluid project-img">
+                </div>
+                <div class="content">
+                  <h3 class="text-uppercase text-center text-dark px-3"> {{project.name}} </h3>
+                  <p class="text-dark">{{project.desc}}</p>
+                </div>
+              </a>
+            </div>
+          </div>
+
+          <!--End of img-container over lay-->
+          {%endfor%}
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+<!--End of OUR projects Section-->
+
+{% endblock %}

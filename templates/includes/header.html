@@ -1,0 +1,68 @@
+<div class="container-fluid icons py-2 px-3">
+  <div class="row">
+    <div class="header col d-flex justify-content-between align-items-baseline">
+      <div class="icons">
+        <a href="{{siteSettings.facebook_url}}" target="_blank" class="mx-2">
+          <i class="fab fa-facebook"></i>
+        </a>
+        <a href="{{siteSettings.twitter_url}}" target="_blank" class="mx-2">
+          <i class="fab fa-twitter"></i>
+        </a>
+        <a href="{{siteSettings.instagram_url}}" target="_blank" class="mx-2">
+          <i class="fab fa-instagram"></i>
+        </a>
+      </div>
+      <h6>
+        <a href="mailto:{{siteSettings.email}}">{{siteSettings.email}}</a>
+      </h6>
+    </div>
+  </div>
+</div>
+<div id="header">
+  <nav id="navbar" class="navbar navbar-expand-md">
+    <a class="navbar-brand px-2 py-0" href="/"
+      ><img src="{{siteSettings.logo.url}}" alt="logo" width="110" />
+    </a>
+
+    <button
+      class="navbar-toggler bg-light"
+      type="button"
+      data-toggle="collapse"
+      data-target="#navbar"
+    >
+      <div class="line1"></div>
+      <div class="line2"></div>
+      <div class="line3"></div>
+    </button>
+
+    <div class="collapse navbar-collapse justify-content-between" id="navbar">
+      <ul class="navbar-nav mx-auto">
+        <li class="nav-item">
+          <a href="/" class="nav-link m-2 text-capitalize nav-active">Home</a>
+        </li>
+        <li class="nav-item">
+          <a href="/about-us" class="nav-link m-2 text-capitalize">About Us</a>
+        </li>
+        <li class="nav-item">
+          <a href="/projects" class="nav-link m-2 text-capitalize">Projects</a>
+        </li>
+        <li class="nav-item">
+          <a href="/our-services" class="nav-link m-2 text-capitalize"
+            >Services</a
+          >
+        </li>
+        <li class="nav-item">
+          <a href="/gallery" class="nav-link m-2 text-capitalize">Gallery</a>
+        </li>
+        <li class="nav-item">
+          <a href="/contact-us" class="nav-link m-2 text-capitalize"
+            >Contact Us</a
+          >
+        </li>
+        <!-- <li class="nav-item">
+                    <a href="/register" class="nav-link m-2 text-capitalize">Register</a>
+                </li> -->
+      </ul>
+    </div>
+  </nav>
+</div>

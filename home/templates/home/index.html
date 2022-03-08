@@ -1,0 +1,164 @@
+{% extends 'main.html' %} {% block content %}
+
+<section>
+  <div class="container-fluid">
+    <div class="row banner">
+      <div class="col-sm-10 heading">
+        <h1 class="display-2 text-uppercase">{{banner.title}}</h1>
+        <p>{{banner.description}}</p>
+        <a href="/contact-us" class="btn btn-main btn-lg m-3">Contact us</a>
+        <a href="/page/about-us" class="btn btn-main btn-lg m-3">Know More</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!--About Section----->
+<section>
+  <div class="container">
+    <div class="about mb-4">
+      <div class="row text-center m-4">
+        <div class="col-md-12 text-center">
+          <h6>Know us more</h6>
+          <h2 class="mb-4">About Us</h2>
+          <span class="title-border"></span>
+          <h1>{{aboutUs.title}}</h1>
+          <p>{{aboutUs.description}}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!--End of About Section-->
+
+<!--- Our PROJECTS ----->
+<section class="project py-3">
+  <div class="container">
+    <div class="project mb-4">
+      <div class="row text-center m-4">
+        <div class="col-md-12 text-center">
+          <h2 class="mb-4">Our projects</h2>
+          <span class="title-border"></span>
+          <p>
+            We have a team of talented professionals which utilizes its
+            innovative mind and excellent ideas in providing construction
+            services in Nepal. Our service is known for proper planning, timely
+            execution and high reliability. Our construction services are
+            provided by our team of design engineer, construction manager,
+            construction engineer and project architect. They work hard to meet
+            the diverse requirements of the customers.
+          </p>
+        </div>
+        <div class="row text-center">
+          {% for project in projects %}
+          <!--Parts imaage overlay-->
+          <div class="col-lg-4 my-2">
+            <div class="projects-container">
+              <!--box-->
+              <a href="/project/{{project.id}}">
+                <div class="img-content">
+                  <!--imgBx-->
+                  <img
+                    src="{{project.image.url}}"
+                    alt="commerial"
+                    class="img-fluid project-img"
+                  />
+                </div>
+                <div class="content">
+                  <h3 class="text-uppercase text-center text-dark px-3">
+                    {{project.name}}
+                  </h3>
+                  <p class="text-dark">{{project.description}}</p>
+                </div>
+              </a>
+            </div>
+          </div>
+
+          <!--End of img-container over lay-->
+          {%endfor%}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!--End of OUR projects Section-->
+
+<!--Services-->
+<section class="services p-5" id="SERVICES">
+  <div class="container">
+    <div class="row">
+      <!--Title-->
+      <div class="col text-center mb-3">
+        <h2 class="mb-4">{{service_page.title}}</h2>
+
+        <span class="title-border"></span>
+        <p>{{ service_page.sub_description }}</p>
+      </div>
+
+      <!-- end of title--->
+    </div>
+  </div>
+
+  <div class="service-inner-wrapper">
+    <div class="container">{{ service_page.description | safe}}</div>
+  </div>
+</section>
+<!--End of Services-->
+
+<!--Testimonial Section-->
+<section id="testimonials" class="py-5 all">
+  <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+    <div class="carousel-inner">
+      <!-- carousel-item-->
+      {% for testimonial in testimonials %}
+      <div
+        class="carousel-item {% if forloop.counter0 == 0 %} active {% endif %}"
+      >
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-10 mx-auto d-flex justify-content-between py-3">
+              <div class="align-self-center ml-3">
+                <img
+                  src="{{testimonial.image.url }}"
+                  alt=""
+                  class="rounded-circle main-img"
+                />
+              </div>
+              <div class="review-text px-5">
+                <h2 class="text-capitalize mb-3 des-color">
+                  {{testimonial.name}}
+                </h2>
+                <p class="text-light">{{testimonial.comment}}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      {%endfor%}
+    </div>
+    <!-- carousel controls-->
+    <a
+      class="carousel-control-prev"
+      href="#carouselExampleControls"
+      role="button"
+      data-slide="prev"
+    >
+      <span class="carousel-control-prev-icon"></span>
+    </a>
+    <a
+      class="carousel-control-next"
+      href="#carouselExampleControls"
+      role="button"
+      data-slide="next"
+    >
+      <span class="carousel-control-next-icon"></span>
+    </a>
+  </div>
+</section>
+<!--End of Testimonial Section-->
+
+<!--Contact us section-->
+{% include "contact.html" %}
+<!--end of contact us section-->
+
+{% endblock %}
