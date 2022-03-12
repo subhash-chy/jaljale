@@ -1,6 +1,8 @@
 from django.shortcuts import render, redirect
+from plant_and_equipment.models import PlatsAndEquipment
 
 from project.models import Project
+from service.models import Service
 
 from .models import Banner
 from setting.models import SiteSetting
@@ -10,16 +12,13 @@ from contact.models import ContactUs
 
 
 def home(request):
-    banner = Banner.objects.last()
-    logo = Banner.objects.last()
+
     site_setting = SiteSetting.objects.last()
     testimonials = Testimonial.objects.all()
     about_us = AboutUs.objects.last()
-    projects = Project.objects.all()
+    projects = Project.objects.all()[:4]
 
     context = {
-        'banner': banner,
-        'logo': logo,
         'siteSettings': site_setting,
         'testimonials': testimonials,
         'aboutUs': about_us,
@@ -29,28 +28,16 @@ def home(request):
 
 
 def about_us(request):
-    logo = Banner.objects.last()
     site_setting = SiteSetting.objects.last()
     about_us = AboutUs.objects.last()
 
     context = {
-        'logo': logo,
         'siteSettings': site_setting,
         'aboutUs': about_us,
 
     }
     return render(request, 'home/about_us.html', context )
 
-
-# def contact_us(request):
-#     logo = Banner.objects.last()
-#     site_setting = SiteSetting.objects.last()
-
-#     context = {
-#         'logo': logo,
-#         'siteSettings': site_setting,
-#     }
-#     return render(request, 'home/contact_us.html', context )
 
 def contact_us(request):
     if request.method == 'POST':
@@ -73,11 +60,35 @@ def contact_us(request):
 
 
 def services(request):
-    logo = Banner.objects.last()
     site_setting = SiteSetting.objects.last()
+    service_col1 = Service.objects.filter(column=1)
+    service_col2 = Service.objects.filter(column=2)
 
     context = {
-        'logo': logo,
         'siteSettings': site_setting,
+        'service_col1': service_col1,
+        'service_col2': service_col2,
         }
     return render(request, 'home/services.html', context)
+
+
+def plants_equipments(request):
+    site_setting = SiteSetting.objects.last()
+    plants_equipments = PlatsAndEquipment.objects.all()
+
+    context = {
+        'siteSettings': site_setting,
+        'plants_equipments': plants_equipments,
+        }
+    return render(request, 'home/plants_equipments.html', context)
+
+
+def gallery(request):
+    site_setting = SiteSetting.objects.last()
+    projects = Project.objects.all()
+
+    context = {
+        'siteSettings': site_setting,
+        'projects': projects,
+        }
+    return render(request, 'home/gallery.html', context)

@@ -1,19 +1,14 @@
 {% extends 'main.html' %} {% block content %}
 
-<section>
-  <div class="container">
-    <div class="about mb-4">
-      <div class="row text-center m-4">
-        <div class="col-md-12 text-center">
-          <h2 class="mb-4">About Us</h2>
-          <span class="title-border"></span>
-          <h1>{{aboutUs.title}}</h1>
-          <p>{{aboutUs.description}}</p>
-        </div>
-      </div>
+<main class="px-custom py-10 space-y-10">
+  <div class="">
+    <h1 class="text-4xl font-bold mb-3">About us</h1>
+    <h2 class="text-xl font-semibold mb-2">{{aboutUs.title}}</h2>
+    <div class="space-y-5">
+      <p>{{aboutUs.description}}</p>
     </div>
   </div>
-</section>
-<!--End of About Section-->
+  </div>
+</main>
 
 {% endblock %}

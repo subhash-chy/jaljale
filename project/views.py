@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import get_object_or_404, render
 
 from home.models import Banner
 from setting.models import SiteSetting
@@ -13,7 +13,7 @@ def ongoing_projects(request):
     context = {
         'logo': logo,
         'siteSettings': site_setting,
-        'ongoing_projects': ongoing_projects,
+        'projects': ongoing_projects,
         }
     return render(request, 'project/projects.html', context)
 
@@ -21,11 +21,21 @@ def ongoing_projects(request):
 def completed_projects(request):
     logo = Banner.objects.last()
     site_setting = SiteSetting.objects.last()
-    completed_projects = Project.objects.filter(status='Ongoing')
+    completed_projects = Project.objects.filter(status='Completed')
 
     context = {
         'logo': logo,
         'siteSettings': site_setting,
-        'completed_projects': completed_projects,
+        'projects': completed_projects,
         }
     return render(request, 'project/projects.html', context)
+
+
+def view_project(request, id=None):
+    site_setting = SiteSetting.objects.last()
+    project = get_object_or_404(Project, pk=id)
+    context = {
+        'siteSettings': site_setting,
+        'project': project,
+        }
+    return render(request, 'project/project_detail.html', context)

@@ -26,6 +26,8 @@ INSTALLED_APPS = [
     'testimonial',
     'page',
     'about_us',
+    'service',
+    'plant_and_equipment',
 ]
 
 MIDDLEWARE = [

@@ -1,25 +1,24 @@
 {% extends 'main.html' %} {% block content %}
+
 <main class="px-custom py-10 space-y-10">
-  <!-- Jaljale Projects section -->
   <div class="space-y-5">
     <div class="flex items-center justify-between">
       <div>
-        <h1 class="text-4xl font-bold mb-5">Jaljale Projects</h1>
+        <h1 class="text-4xl font-bold mb-5">Our Gallery</h1>
         <p>
-          We have a team of talented professionals which utilizes its innovative
-          mind and excellent ideas in providing construction services in Nepal.
-          Our service is known for proper planning, timely execution and high
-          reliability. Our construction services are provided by our team of
-          design engineer, construction manager, construction engineer and
-          project architect. They work hard to meet the diverse requirements of
-          the customers.
+          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Minima, est
+          nisi atque, animi saepe culpa sint facilis impedit aut magnam dolorem
+          at, quos quod mollitia. Dolorum doloribus laboriosam illo
+          necessitatibus, vel assumenda reprehenderit consequatur, voluptatem
+          porro iusto aperiam obcaecati excepturi rem molestiae aspernatur eum
+          provident quibusdam perspiciatis repudiandae. Eos quasi cupiditate
+          quod iure eius architecto dignissimos ex fugiat soluta nostrum!
         </p>
       </div>
     </div>
     <div class="rounded-md grid gap-5 md:grid-cols-3 2xl:grid-cols-4">
       {% for project in projects %}
       <div class="cursor-pointer">
-        <a href="{% url 'project:view_project' project.id %}">
         <img
           class="h-4/5 w-full object-cover"
           src="{{project.image.url}}"
@@ -28,13 +27,10 @@
         <div class="bg-primary/10 px-5 py-4 rounded-b-md">
           <p class="text-2xl font-semibold">{{project.name}}</p>
         </div>
-      </a>
       </div>
       {% endfor %}
-
-      </div>
+    </div>
     </div>
   </div>
 </main>
-
 {% endblock %}

@@ -3,42 +3,104 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1, shrink-to-fit=no"
-    />
-
-    <!-- Bootstrap CSS -->
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css"
-      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
-      crossorigin="anonymous"
-    />
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{% static 'css/main.css' %}" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
-      integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
     />
-    <title>Jaljale Nirman Sewa</title>
-
-    <link rel="stylesheet" href="{% static 'css/main.css' %}" />
-    <style>
-      .header a {
-        color: #fff !important;
-        transition: none !important;
-      }
-    </style>
+    <title>Jaljale Nirmal Sewa</title>
   </head>
   <body>
-    <!-- header -->
-    {% include "includes/header.html" %} {% block content %} {% endblock %}
+        <!-- Nav Menu -->
+        <nav
+        class="bg-gray-100 shadow-md py-5 px-custom flex items-center justify-between"
+      >
+        <div><a href="/" class="text-lg font-bold">JALJALE</a></div>
+        <div class="text-xl relative">
+  
+          <div class="md:hidden"><i onclick="" id="hamburger" class=" fa-solid fa-bars"></i></div>
+  
+          <ul id="toggle-nav" class="mobile-nav desktop-nav  shadow-md bg-white md:shadow-inherit md:bg-inherit gap-5">
+            <li><a class="hover:text-primary" href="{% url 'home:about-us' %}">About</a></li>
+  
+         
+            <li class="dropdown cursor-pointer group">Projects <i class="fa-solid fa-angle-down transition-all duration-300 group-hover:rotate-180"></i>
+              <ul class="dropdown-menu absolute hidden text-gray-700 bg-white shadow-md rounded-md">
+                <li><a class="hover:bg-primary/10 py-2 px-4 block whitespace-no-wrap" href="{% url 'project:ongoing_projects' %}">Ongoing Projects</a></li>
+                <li><a class="hover:bg-primary/10 py-2 px-4 block whitespace-no-wrap" href="{% url 'project:completed_projects' %}">Completed Projects</a></li>
+              </ul>
+            </li>
+  
+            <li><a class="hover:text-primary" href="{% url 'home:services' %}">Services</a></li>
+            <li><a class="hover:text-primary" href="{% url 'home:plants_equipments' %}">Plants & Equipments</a></li>
+            <li><a class="hover:text-primary" href="{% url 'home:contact-us' %}">Contact</a></li>
+            <li><a class="hover:text-primary" href="{% url 'home:gallery' %}">Gallery</a></li>
+          </ul>
+        </div>
+      </nav>
+ {% block content %}
+  {% endblock %}
 
-    <!-- footer -->
-    {% include "includes/footer.html" %}
-  </body>
+   <!-- Footer section -->
+   <footer class="bg-gray-100 px-custom pt-20 pb-8">
+    <!-- First -->
+    <div class="md:flex items-start flex-wrap space-y-10 md:space-y-0  border-b-2 pb-10 ">
+      <div class="space-y-5 md:w-1/3">
+        <h1 class="text-3xl font-bold">Quick Links</h1>
+        <ul class="space-y-2">
+          <li><a href="{% url 'home:index' %}">Home</a></li>
+          <li><a href="{% url 'home:plants_equipments' %}">Plants & equipments</a></li>
+          <li><a href="{% url 'home:contact-us' %}">Contact</a></li>
+          <li><a href="{% url 'home:gallery' %}">Gallery</a></li>
+        </ul>
+      </div>
+      <div class="space-y-5 md:w-1/3 md:px-5">
+        <h1 class="text-3xl font-bold">Contact Info</h1>
+        <ul class="space-y-2">
+          <li>
+            {{siteSettings.address}}
+          </li>
+          <li>{{siteSettings.email}}</li>
+          <li>Tel: {{siteSettings.phone}}</li>
+        </ul>
+      </div>
+      <div class="space-y-5 md:w-1/3">
+        <div class="space-y-5">
+          <h1 class="text-3xl font-bold">Find Us</h1>
+          <iframe class="bg-primary/10" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3531.806670713143!2d85.28704261425824!3d27.723254831401267!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39eb192bfd89ba61%3A0x403ebbdd468c1d5!2sPrabhu%20Iron%20Industries%20PVT.LTD!5e0!3m2!1sen!2snp!4v1631762772868!5m2!1sen!2snp"
+        width="200" height="200" frameborder="0" style="border:0"></iframe>
+        <!-- allowfullscreen -->
+        </div>
+
+
+        <h1 class="text-3xl font-bold">Follow Us</h1>
+        <ul class="flex gap-5 items-center text-2xl">
+          <li><a class="text-blue-700" href="{{siteSettings.facebook_url}}" target="_blank"><i class="fa-brands fa-facebook"></i></a></i></li>
+          <li><a  class="text-pink-700" href="{{siteSettings.instagram_url}}" target="_blank"><i class="fa-brands fa-instagram"></i></a></li>
+          <li><a  class="text-blue-500" href="{{siteSettings.twitter_url}}" target="_blank"><i class="fa-brands fa-twitter"></i></a></li>
+         
+     
+        </ul>
+       
+      </div>
+
+    
+    </div>
+   
+    <!-- Copyright -->
+    <div class="pt-8 text-center">
+      <span id="date"></span> @ copyright Jaljale
+    </div>
+  </footer>
+  <script>
+    const date = document.getElementById("date");
+    const currentYear = new Date().getFullYear();
+    date.innerHTML = currentYear;
+  </script>
+
+  <script src="{% static 'js/main.js' %}"></script>
+</body>
 </html>

@@ -1,121 +1,36 @@
 {% extends 'main.html' %} {% block content %}
-
-<!--Services-->
-<section class="services p-5" id="SERVICES">
-  <div class="container">
-    <div class="row">
-      <!--Title-->
-      <div class="col text-center mb-3">
-        <h2 class="mb-4">Our Services</h2>
-
-        <span class="title-border"></span>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi
-          praesentium assumenda eveniet error repellendus, delectus, molestias
-          magni voluptatum itaque libero excepturi quod hic illo quos eius
-          mollitia modi corrupti? Itaque!
-        </p>
+<main class="px-custom py-10 space-y-10">
+  <!-- Our services -->
+  <div class="space-y-5">
+    <h1 class="text-4xl font-bold">Our Services</h1>
+    <p>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo odio veniam
+      quis! Tempore rerum, dolores officia eaque reprehenderit quidem aut,
+      laboriosam, veritatis magnam distinctio at! Nulla possimus tempore
+      molestiae omnis enim. Non at, ex odit aspernatur nesciunt ipsa velit iure.
+    </p>
+    <div class="grid gap-5 md:grid-cols-2">
+      <div class="space-y-5">
+        {% for service in service_col2 %}
+        <div>
+          <h2 class="text-2xl font-semibold mb-3">{{service.title}}</h2>
+          <p>{{service.description}}</p>
+        </div>
+        {% endfor %}
       </div>
 
-      <!-- end of title--->
-    </div>
-  </div>
-
-  <div class="service-inner-wrapper">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-4">
-          <!-- left service item 01 -->
-          <div class="left-service-item">
-            <!-- Icon -->
-            <div class="left-icon">
-              <i class="fas fa-city fa-2x"></i>
-            </div>
-            <!-- Service item title & description -->
-            <h3>Design</h3>
-            <p>
-              Lorem ipsum dolor, consectetur sed do adipisicing elit, sed do
-              eiusmod tempor incididunt
-            </p>
+      <div>
+        <div class="space-y-5">
+          {% for service in service_col2 %}
+          <div>
+            <h2 class="text-2xl font-semibold mb-3">{{service.title}}</h2>
+            <p>{{service.description}}</p>
           </div>
-          <!-- left service item 02 -->
-          <div class="left-service-item">
-            <!-- Icon -->
-            <div class="left-icon">
-              <i class="fas fa-torii-gate fa-2x"></i>
-            </div>
-            <!-- Service item title & description -->
-            <h3>Build</h3>
-            <p>
-              Lorem ipsum dolor, consectetur sed do adipisicing elit, sed do
-              eiusmod tempor incididunt
-            </p>
-          </div>
-          <!-- left service item 03 -->
-          <div class="left-service-item">
-            <!-- Icon -->
-            <div class="left-icon">
-              <i class="fas fa-building fa-2x"></i>
-            </div>
-            <!-- service item title & description -->
-            <h3>Sustain</h3>
-            <p>
-              Lorem ipsum dolor, consectetur sed do adipisicing elit, sed do
-              eiusmod tempor incididunt
-            </p>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="service-pic">
-            <img src="/static/images/jcbb.jpg" alt="" class="center shadow" />
-          </div>
-        </div>
-        <div class="col-md-4">
-          <!-- right service item 01 -->
-          <div class="right-service-item">
-            <!-- Icon -->
-            <div class="right-icon">
-              <i class="fas fa-tasks fa-2x"></i>
-            </div>
-            <!-- service item title and description -->
-            <h3>Quality</h3>
-            <p>
-              Lorem ipsum dolor, consectetur sed do adipisicing elit, sed do
-              eiusmod tempor incididunt
-            </p>
-          </div>
-
-          <!-- right service item 02 -->
-          <div class="right-service-item">
-            <!-- Icon -->
-            <div class="right-icon">
-              <i class="fas fa-truck-loading fa-2x"></i>
-            </div>
-            <!-- Service item title and description -->
-            <h3>Concrete transport</h3>
-            <p>
-              Lorem ipsum dolor, consectetur sed do adipisicing elit, sed do
-              eiusmod tempor incididunt
-            </p>
-          </div>
-          <!-- right service item 03 -->
-          <div class="right-service-item">
-            <!-- Icon -->
-            <div class="right-icon">
-              <i class="fas fa-couch fa-2x"></i>
-            </div>
-            <!-- Service item title and description -->
-            <h3>interior design</h3>
-            <p>
-              Lorem ipsum dolor, consectetur sed do adipisicing elit, sed do
-              eiusmod tempor incididunt
-            </p>
-          </div>
+          {% endfor %}
         </div>
       </div>
     </div>
   </div>
-</section>
-<!--End of Services-->
+</main>
 
 {% endblock %}

@@ -1,0 +1,47 @@
+{% extends 'main.html' %} {% block content %}
+<main class="px-custom py-10 space-y-10">
+  <div>
+    <h1 class="text-4xl font-bold mb-3">Plants and Equipents</h1>
+  </div>
+  <div class="w-full overflow-x-auto">
+    <table class="table-auto w-full border-2 border-primary/10">
+      <thead class="text-left bg-primary/10">
+        <tr>
+          <th class="border-r-2 border-primary/10 px-3">S.No</th>
+          <th class="border-r-2 border-primary/10 px-3">Name of Equipment</th>
+          <th class="border-r-2 border-primary/10 px-3">No. of units</th>
+          <th class="border-r-2 border-primary/10 px-3">Company and kind</th>
+          <th class="border-r-2 border-primary/10 px-3">Capacity</th>
+          <th class="border-r-2 border-primary/10 px-3">Age and Condition</th>
+          <th class="border-r-2 border-primary/10 px-3">Present Location</th>
+          <th class="px-3">Ownership</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for plant in plants_equipments %}
+        <tr class="even:bg-primary/5">
+          <td class="border-r-2 border-primary/10 py-5 px-3">
+            {{forloop.counter}}
+          </td>
+          <td class="border-r-2 border-primary/10 py-5 px-3">{{plant.name}}</td>
+          <td class="border-r-2 border-primary/10 py-5 px-3">{{plant.unit}}</td>
+          <td class="border-r-2 border-primary/10 py-5 px-3">
+            {{plant.company}}
+          </td>
+          <td class="border-r-2 border-primary/10 py-5 px-3">
+            {{plant.capacity}}
+          </td>
+          <td class="border-r-2 border-primary/10 py-5 px-3">
+            {{plant.age_and_condition}}
+          </td>
+          <td class="border-r-2 border-primary/10 py-5 px-3">
+            {{plant.present_location}}
+          </td>
+          <td class="px-3 py-5">{{plant.ownership}}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</main>
+{% endblock %}

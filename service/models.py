@@ -1,10 +1,15 @@
 from django.db import models
 
+class Service(models.Model):
+    CHOICES = (
+        (1, 1),
+        (2, 2),
+    )
 
-class Banner(models.Model):
     title = models.CharField(max_length=255)
     description = models.TextField()
-    image = models.ImageField(upload_to='banner/')
+    column = models.IntegerField(choices=CHOICES, default=1)
+
 
     def __str__(self):
         return self.title

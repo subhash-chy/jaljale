@@ -1,93 +1,78 @@
 {% extends 'main.html' %} {% block content %}
-<!--Contact us section-->
-<section class="bg-color p-5">
-  <div class="container">
-    <div class="contact-us">
-      <div class="row">
-        <div class="col-md-12 text-center mb-3">
-          <h2>Contact Us</h2>
-          <span class="title-border"></span>
-          <p>For more information contact us</p>
-        </div>
+<!-- Main Body -->
+<main class="px-custom py-10 space-y-10">
+  <div>
+    <h1 class="text-4xl font-bold mb-5">Contact Jalgale</h1>
+    <div class="flex flex-col md:flex-row gap-5 justify-between">
+      <div>
+        <h2 class="text-xl font-semibold mb-2">Location</h2>
+        <p>
+          <i class="fa-solid fa-location-dot mr-2"></i>{{siteSettings.address}}
+        </p>
       </div>
-      <div class="row contact">
-        <div class="col-md-4 text-center">
-          <i class="fas fa-mobile-alt fa-3x color"></i>
-          <h5 class="mt-3">Phone</h5>
-          <p>{{siteSettings.phone}}</p>
-        </div>
-        <div class="col-md-4 text-center">
-          <i class="fas fa-map-marker-alt fa-3x color"></i>
-          <h5 class="mt-3">Address</h5>
-          <p>{{siteSettings.address}}</p>
-        </div>
-        <div class="col-md-4 text-center">
-          <i class="far fa-envelope-open fa-3x color"></i>
-          <h5 class="mt-3">Email</h5>
-          <p>{{siteSettings.email}}</p>
-        </div>
+      <div>
+        <h2 class="text-xl font-semibold mb-2">Email</h2>
+        <p><i class="fa-solid fa-envelope mr-2"></i>{{siteSettings.email}}</p>
       </div>
-      <div class="row justify-content-center">
-        <div class="col-lg-10 col-md-8">
-          <br />
-          <form action="{% url 'home:contact-us' %}" method="POST">
-            {% csrf_token %}
-
-            <div class="input-group input-group-lg mb-3">
-              <div class="input-group-prepend">
-                <span class="input-group-text">
-                  <i class="fas fa-user"></i>
-                </span>
-              </div>
-              <input
-                type="text"
-                name="name"
-                class="form-control"
-                placeholder="Name"
-                required
-              />
-            </div>
-
-            <div class="input-group input-group-lg mb-3">
-              <div class="input-group-prepend">
-                <span class="input-group-text">
-                  <i class="fas fa-envelope"></i>
-                </span>
-              </div>
-              <input
-                type="text"
-                name="email"
-                class="form-control"
-                placeholder="Email"
-                required
-              />
-            </div>
-
-            <div class="input-group input-group-lg mb-3">
-              <div class="input-group-prepend">
-                <span class="input-group-text">
-                  <i class="fas fa-pencil-alt"></i>
-                </span>
-              </div>
-              <textarea
-                name="message"
-                class="form-control"
-                placeholder="Message"
-                rows="5"
-                required
-              ></textarea>
-            </div>
-
-            <input
-              type="submit"
-              value="Submit"
-              class="btn btn-cont btn-block btn-lg"
-            />
-          </form>
-        </div>
+      <div>
+        <h2 class="text-xl font-semibold mb-2">Phone</h2>
+        <p><i class="fa-solid fa-phone mr-2"></i>{{siteSettings.phone}}</p>
       </div>
     </div>
   </div>
-</section>
-<!--end of contact us section-->
+  <div>
+    <h1 class="text-xl font-semibold mb-5">Send Message</h1>
+    <form
+      class="flex flex-col gap-5"
+      action="{% url 'home:contact-us' %}"
+      method="POST"
+    >
+      {% csrf_token %}
+      <div class="space-y-2">
+        <label for="name">Your Name</label>
+        <div class="bg-primary/10 p-3 rounded-md">
+          <input
+            class="outline-none bg-transparent w-full"
+            type="text"
+            name="name"
+            required
+          />
+        </div>
+      </div>
+      <div class="space-y-2">
+        <label for="email">Your Email</label>
+        <div class="bg-primary/10 p-3 rounded-md">
+          <input
+            class="outline-none bg-transparent w-full"
+            type="text"
+            name="email"
+            required
+          />
+        </div>
+      </div>
+      <div class="space-y-2">
+        <label for="message">Your Message</label>
+        <div class="bg-primary/10 p-3 rounded-md">
+          <textarea
+            class="outline-none bg-transparent w-full"
+            name="message"
+            cols="30"
+            rows="5"
+            required
+          ></textarea>
+        </div>
+      </div>
+      <div>
+        <button
+          class="bg-primary text-white px-4 py-3 rounded-lg hover:opacity-90"
+          type="submit"
+        >
+          SEND
+        </button>
+      </div>
+    </form>
+  </div>
+</main>
+<!-- Main Body ends -->
+
 {% endblock content %}
