@@ -34,32 +34,86 @@
 <div class="h-[80vh]">
   <!-- Swiper Slider -->
 <div class="swiper mySwiper">
- <div class="absolute z-10 px-custom text-center flex gap-5 flex-col items-center justify-center w-full h-full bg-black/60 text-white">
-   <h1 class="text-4xl font-bold">Construction</h1>
-   <p class="px-5 md:px-0">We provide best quality services. Build your dream sooner or later!</p>
-   <div class="flex gap-5">
-    <button
-    class="bg-primary text-white px-3 py-2 rounded-lg hover:opacity-90"
-  >
-    Contact Us
-  </button>
-    <button
-    class="bg-primary text-white px-3 py-2 rounded-lg hover:opacity-90"
-  >
-    Know More
-  </button>
-   </div>
-  </div>
+
  <div class="swiper-wrapper">
-   {%for banner in banners %}
+   <!-- slide 1 -->
    <div class="swiper-slide">
+    <div class="absolute z-10 px-custom text-center flex gap-5 flex-col items-center justify-center w-full h-full bg-black/60 text-white">
+      <h1 class="text-4xl font-bold">Construction</h1>
+      <p class="px-5 md:px-0">We provide best quality services. Build your dream sooner or later!</p>
+      <div class="flex gap-5">
+       <button
+       class="bg-primary text-white px-3 py-2 rounded-lg hover:opacity-90"
+     >
+       Contact Us
+     </button>
+       <button
+       class="bg-primary text-white px-3 py-2 rounded-lg hover:opacity-90"
+     >
+       Know More
+     </button>
+      </div>
+     </div>
      <img
        class="w-full object-cover"
-       src="{{banner.image.url}}"
-       alt="{{banner.title}}"
+       src="./images/cons0.jpg"
+       alt="jaljale featured images"
      />
    </div>
-    {% endfor %}
+   <!-- Slide 1 ends -->
+
+   <!-- slide 2 -->
+   <div class="swiper-slide">
+    <div class="absolute z-10 px-custom text-center flex gap-5 flex-col items-center justify-center w-full h-full bg-black/60 text-white">
+      <h1 class="text-4xl font-bold">Construction</h1>
+      <p class="px-5 md:px-0">We provide best quality services. Build your dream sooner or later!</p>
+      <div class="flex gap-5">
+       <button
+       class="bg-primary text-white px-3 py-2 rounded-lg hover:opacity-90"
+     >
+       Contact Us
+     </button>
+       <button
+       class="bg-primary text-white px-3 py-2 rounded-lg hover:opacity-90"
+     >
+       Know More
+     </button>
+      </div>
+     </div>
+     <img
+     class="w-full object-cover"
+     src="./images/con1.jpg"
+     alt="jaljale featured images"
+   />
+   </div>
+   <!-- Slide 2 ends -->
+
+   <!-- Slide 3 -->
+   <div class="swiper-slide">
+    
+    <div class="absolute z-10 px-custom text-center flex gap-5 flex-col items-center justify-center w-full h-full bg-black/60 text-white">
+      <h1 class="text-4xl font-bold">Construction</h1>
+      <p class="px-5 md:px-0">We provide best quality services. Build your dream sooner or later!</p>
+      <div class="flex gap-5">
+       <button
+       class="bg-primary text-white px-3 py-2 rounded-lg hover:opacity-90"
+     >
+       Contact Us
+     </button>
+       <button
+       class="bg-primary text-white px-3 py-2 rounded-lg hover:opacity-90"
+     >
+       Know More
+     </button>
+      </div>
+     </div>
+    <img
+     class="w-full object-cover"
+     src="./images/image_1.png"
+     alt="jaljale featured images"
+   /></div>
+
+   <!-- Slide 3 ends -->
  </div>
  <!-- Next and previous buttons -->
  <div class="swiper-button-next"></div>
