@@ -51,27 +51,15 @@
    </div>
   </div>
  <div class="swiper-wrapper">
-   <!-- slide 1 -->
+   {%for banner in banners %}
    <div class="swiper-slide">
      <img
        class="w-full object-cover"
-       src="./images/cons0.jpg"
-       alt="jaljale featured images"
+       src="{{banner.image.url}}"
+       alt="{{banner.title}}"
      />
    </div>
-   <!-- slide 2 -->
-   <div class="swiper-slide">
-     <img
-     class="w-full object-cover"
-     src="./images/con1.jpg"
-     alt="jaljale featured images"
-   />
-   </div>
-   <div class="swiper-slide"> <img
-     class="w-full object-cover"
-     src="./images/image_1.png"
-     alt="jaljale featured images"
-   /></div>
+    {% endfor %}
  </div>
  <!-- Next and previous buttons -->
  <div class="swiper-button-next"></div>

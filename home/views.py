@@ -12,7 +12,7 @@ from contact.models import ContactUs
 
 
 def home(request):
-
+    banners = Banner.objects.all()
     site_setting = SiteSetting.objects.last()
     testimonials = Testimonial.objects.all()
     about_us = AboutUs.objects.last()
@@ -23,6 +23,7 @@ def home(request):
         'testimonials': testimonials,
         'aboutUs': about_us,
         'projects': projects,
+        'banners': banners,
     }
     return render(request, 'home/index.html', context)
 
